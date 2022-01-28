@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>good gramars</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            background: #eee;
+            display: block;
+            margin: 0 auto;
+        }
+
+
+        #main {
+            display: none;
+        }
+
+        #newGame, #creditBtn, #backBtn {
+            text-align: center;
+            vertical-align: middle;
+            border: 2px solid goldenrod;
+            border-radius: 7px;
+            background-color: gold;
+            color: orangeRed;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: "Courier New";
+            width: 5em;
+            margin: 5px auto;
+        }
+
+        #theHead {
+            text-align: center;
+            margin: unset;
+            color: orange;
+            font-size: 2em;
+            font-family: "Courier New";
+        }
+
+        #credits {
+            text-align: center;
+            margin: unset;
+            color: orange;
+            font-size: 2em;
+            font-family: "Courier New";
+            display: none;
+            background-color: inherit;
+        }
+
+        #backBtn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="theHead">Bad Gramarrs</div>
+    <div id="newGame" onclick="runGame()" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'">Strt Gaem</div>
+    <div id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="showCredits()">Credets</div>
+    <div id="credits">Bad Gramarrs: Maed buy mnoi</div>
+    <div id="backBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="goBack()">Back</div>
+    <div id="main">
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+    </div>
+    <script src="atari.js"></script>
+   
+    <script>
+        var runGame = function () {
+            document.getElementById("newGame").style.display = "none";
+            document.getElementById("theHead").style.display = "none";
+
+            document.getElementById("credits").style.display = "none";
+            document.getElementById("main").style.display = "block";
+            document.getElementById("creditBtn").style.display = "none";
+            randomNumber = Math.floor(Math.random() * 4 + 1);
+        };
+
+        var showCredits = function () {
+            document.getElementById("theHead").style.display = "none";
+            document.getElementById("creditBtn").style.display = "none";
+            document.getElementById("newGame").style.display = "none";
+            document.getElementById("credits").style.display = "block";
+            document.getElementById("backBtn").style.display = "block";
+        };
+
+        var goBack = function () {
+            document.getElementById("backBtn").style.display = "none";
+            document.getElementById("credits").style.display = "none";
+            document.getElementById("theHead").style.display = "block";
+            document.getElementById("newGame").style.display = "block";
+            document.getElementById("creditBtn").style.display = "block";
+        };
+    </script>
+
+</body>
+</html>
